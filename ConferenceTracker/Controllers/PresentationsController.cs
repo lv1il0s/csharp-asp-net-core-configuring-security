@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace ConferenceTracker.Controllers
 {
@@ -11,6 +12,7 @@ namespace ConferenceTracker.Controllers
     {
         private readonly IPresentationRepository _presentationRepository;
         private readonly ISpeakerRepository _speakerRepository;
+        private readonly ILogger _logger;
 
         public PresentationsController(IPresentationRepository presentationRepository, ISpeakerRepository speakerRepository)
         {

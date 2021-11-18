@@ -64,6 +64,8 @@ namespace ConferenceTracker
             using (var context = scope.ServiceProvider.GetService<ApplicationDbContext>())
                 context.Database.EnsureCreated();
 
+            app.UseCors(_allowedOrigins);
+
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();

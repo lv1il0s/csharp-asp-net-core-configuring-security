@@ -14,10 +14,11 @@ namespace ConferenceTracker.Controllers
         private readonly ISpeakerRepository _speakerRepository;
         private readonly ILogger _logger;
 
-        public PresentationsController(IPresentationRepository presentationRepository, ISpeakerRepository speakerRepository)
+        public PresentationsController(IPresentationRepository presentationRepository, ISpeakerRepository speakerRepository, ILogger<PresentationsController> logger)
         {
             _presentationRepository = presentationRepository;
             _speakerRepository = speakerRepository;
+            _logger = logger;
         }
 
         public IActionResult Index()

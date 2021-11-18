@@ -41,10 +41,12 @@ namespace ConferenceTracker
         {   
             if (env.IsDevelopment())
             {
-                
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
+                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
